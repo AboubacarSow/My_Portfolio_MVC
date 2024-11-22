@@ -1,0 +1,39 @@
+﻿@model My_Portfolio_MVC.Models.Admin
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="py-1">
+    <h4 class="text-center my-2">Profilim Güncelleme Sayfası</h4> 
+    <div class="text-danger list-unstyled">@Html.ValidationSummary()</div>
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" name="AdminId" value="@Model.AdminId" />
+        <div class="text-center" >
+            <label>Resmi</label><br /><br />
+            <img src="@Model.ImageUrl" alt="profile's picture'" style="width:75px; height:75px;border-radius:50%"/>
+        </div>
+        <div class="my-2">
+            <label class="my-1">Profil Resmi Yükleyin</label><br/>
+            <input type="file" name="ImageFile"/>
+        </div>
+        <div class="my-2">
+            <label class="my-1">Ad</label>
+            @Html.TextBoxFor(a=>a.Name , new {@class="form-control"})
+        </div> 
+        <div class="my-2">
+            <label class="my-1">Soyad</label>
+            @Html.TextBoxFor(a=>a.LastName , new {@class="form-control"})
+        </div>
+        <div class="my-2">
+            <label class="my-1">Email</label>
+            @Html.TextBoxFor(a=>a.Email, new {@class="form-control"})
+        </div>
+        <div class="my-2">
+            <label class="my-1">Şifre</label>
+            <input type="password" name="Sifre" class="form-control" />
+        </div>
+        <button class="btn btn-outline-success my-3"> Güncelle</button>
+    </form>
+
+</div>
+

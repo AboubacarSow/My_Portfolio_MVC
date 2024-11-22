@@ -5,8 +5,8 @@
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
-<div>
-    <h5 class="text-center">Categories</h5> 
+<div class="py-1">
+    <h4 class="text-center my-2">Categories</h4> 
    
    <div class="container-fluid">
 
@@ -28,13 +28,13 @@
                         <td class="text-center">@item.Name</td>
                         <td class="text-center"><a href="/Category/Delete/@item.CategoryId" class="btn btn-outline-danger">Sil</a></td>
                        
-                        <td class="text-center"><a  href="/Category/Update/@item.CategoryId" class="btn btn-outline-info">Güncelle</a> </td>
+                        <td class="text-center"><a  href="/Category/Update/@item.CategoryId" class="btn btn-outline-success">Güncelle</a> </td>
                     </tr>
                  }
             </tbody>
         </table> 
    </div>
-   <a href="/Category/Create" class="btn btn-primary my-4 text-center"> Yeni bir kategori Ekle </a>                           
+   <a href="/Category/Create" class="btn btn-success my-4 text-center"> Yeni bir kategori Ekle </a>                           
 </div>
 
 

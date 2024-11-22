@@ -5,6 +5,7 @@ using System.Web.Security;
 
 namespace My_Portfolio_MVC.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         MyPortefolioDbContext  _dbContext = new MyPortefolioDbContext();    
@@ -25,7 +26,8 @@ namespace My_Portfolio_MVC.Controllers
             }
             FormsAuthentication.SetAuthCookie(value.Email,false);
             Session["User name and surname"] = value.Name + " " + value.LastName;
-            return RedirectToAction("Index","Project");
+            Session["email"] = value.Email;
+            return RedirectToAction("Index","Category");
         }
     }
 }
