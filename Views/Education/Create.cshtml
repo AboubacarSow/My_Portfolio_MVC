@@ -1,0 +1,41 @@
+﻿@model My_Portfolio_MVC.Models.Education 
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h4 class="text-center">Create</h4>
+
+<form method="post">
+    <div class="my-2">
+        <label class="my-4">Okul Adı</label>
+        @Html.TextBoxFor(e=> e.SchoolName, new  {@class= "form-control" })
+    </div>
+    <div class="my-2">
+        <label class="my-4">Bölüm Adı</label>
+        @Html.TextBoxFor(e=> e.Department, new  {@class= "form-control" })
+    </div>
+    <div class="my-2">
+        <label class="my-4">Açıklama</label>
+        @Html.TextBoxFor(e=> e.Description, new  {@class= "form-control" })
+    </div>
+    <div class="my-2">
+        <label class="my-4">Başlama Tarihi </label>
+        <input type="date" name="StartDate" class="form-control" />
+    </div> 
+    <div class="my-2">
+        <label class="my-4">Bitiş Tarihi <span><strong>(Eğer Devam Ediyorsa Boş Bırakın)</strong></span></label>
+        <input type="date" name="EndDate" class="form-control" />
+    </div>
+    <div class="my-2">
+        <label class="my-4">Derece <span><strong>(Lisans , Önlisans , YüksekLisans vs.)</strong></span></label>
+       <select name="Degree" class="form-control">
+           <option disabled>Seçinizi Yapınız</option>
+           <option value="ÖnLisans">ÖnLisans</option>
+           <option value="Lisans">Lisans</option>
+           <option value="Yüksek Lisans">Yüksek Lisans</option>
+       </select>
+    </div>
+    <button class="btn btn-outline-primary my-4">Kaydet</button>
+</form>
+

@@ -1,0 +1,40 @@
+﻿@model List<My_Portfolio_MVC.Models.Project>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<h2 class="my-3 text-center">Projects</h2>
+<table class="table table-hover table-striped">
+    <thead class="bg-light">
+        <tr class="text-dark">
+            <th>#</th>
+            <th>Proje Adı</th>
+            <th>Proje Açıklaması</th>
+            <th>Kategori</th>
+            <th>Github Url</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+         {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td><img src="@item.ImageUrl" width="80" />@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Category.Name</td>
+                <td> <a class="btn btn-outline-warning" href="@item.GithubUrl" target="_blank">Github Link</a></td>
+                <td>@Html.ActionLink("Sil", "Delete", new { id = @item.ProjectId }, new {@class="btn btn-outline-danger"})</td>
+                <td>@Html.ActionLink("Güncelle", "Update", new { id= @item.ProjectId },new { @class = "btn btn-outline-success" })</td>
+            </tr>
+         }
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Yeni bir proje proje Ekle","Create",new {@class = "btn btn-outline-success"})
+</div>
+

@@ -1,0 +1,39 @@
+﻿
+@model My_Portfolio_MVC.Models.Project
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2 class="text-center">Güncelleme</h2>
+
+<form method="post" action="Update">
+    @Html.HiddenFor(project => project.ProjectId)
+    <div class="form-group my-2">
+        <label class="my-1">Proje Adı</label>
+        @Html.TextBoxFor(n => n.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.Name, "", new { @class = "text-danger my-1" })
+    </div>
+    <div class="form-group my-2">
+        <label class="my-1">Görsel Url</label>
+        @Html.TextBoxFor(i => i.ImageUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.ImageUrl, "", new { @class = "text-danger my-1" })
+    </div>
+    <div class="form-group my-2">
+        <label class="my-1">Kategori</label>
+        @Html.DropDownListFor(n => n.CategoryId, (List<SelectListItem>)ViewBag.categories, "Kategori Seçin", new { @class = "form-control bg-dark" })
+        @Html.ValidationMessageFor(n => n.CategoryId, "", new { @class = "text-danger my-1" })
+    </div>
+    <div class="form-group my-2">
+        <label class="my-1">Açıklama</label>
+        @Html.TextAreaFor(n => n.Description, 5, 1, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.Description, "", new { @class = "text-danger my-1" })
+    </div>
+    <div class="form-group my-2">
+        <label class="my-1">Github Url</label>
+        @Html.TextBoxFor(n => n.GithubUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.GithubUrl, "", new { @class = "text-danger my-1" })
+    </div>
+    <button type="submit" class="btn btn-outline-success my-3"><i class="fade fa-edit"></i>Güncelle</button>
+</form>
+

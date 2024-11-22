@@ -1,0 +1,18 @@
+﻿@model My_Portfolio_MVC.Models.Category
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2 class="text-center">Create</h2>
+<hr />
+<div class="container">
+    <form method="post" action="Create">
+        
+        @Html.LabelFor(name=> name.Name,"Kategory Adı",new {@class = "form-label my-1"})
+      
+        @Html.TextBoxFor(name=>name.Name,"Kategory adı giriniz", new {@class="form-control"})
+        <button type="submit" class="btn btn-outline-info my-3">Add</button>
+    </form>
+</div>
+
