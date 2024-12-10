@@ -57,8 +57,8 @@
           <Property Name="EducationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SchoolName" Type="nvarchar" MaxLength="100" />
           <Property Name="Department" Type="nvarchar" MaxLength="50" />
-          <Property Name="StartDate" Type="date" />
-          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" />
           <Property Name="Degree" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -165,15 +165,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MyPortefolioDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="About">
-          <Key>
-            <PropertyRef Name="AboutId" />
-          </Key>
-          <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CvUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Banner">
           <Key>
             <PropertyRef Name="BannerId" />
@@ -206,8 +197,8 @@
           <Property Name="EducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SchoolName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StartDate" Type="DateTime" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -286,7 +277,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="MyPortefolioDbContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Abouts" EntityType="Self.About" />
           <EntitySet Name="Banners" EntityType="Self.Banner" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Contacts" EntityType="Self.Contact" />
@@ -303,6 +293,7 @@
           </AssociationSet>
           <EntitySet Name="Expertises" EntityType="MyPortefolioDbModel.Expertise" />
           <EntitySet Name="Admins" EntityType="MyPortefolioDbModel.Admin" />
+          <EntitySet Name="Abouts" EntityType="MyPortefolioDbModel.About" />
         </EntityContainer>
         <EntityType Name="Expertise">
           <Key>
@@ -322,22 +313,22 @@
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="AboutId" />
+          </Key>
+          <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CvUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MyPortefolioDbModelStoreContainer" CdmEntityContainer="MyPortefolioDbContext">
-          <EntitySetMapping Name="Abouts">
-            <EntityTypeMapping TypeName="MyPortefolioDbModel.About">
-              <MappingFragment StoreEntitySet="Abouts">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="AboutId" ColumnName="AboutId" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="CvUrl" ColumnName="CvUrl" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Banners">
             <EntityTypeMapping TypeName="MyPortefolioDbModel.Banner">
               <MappingFragment StoreEntitySet="Banners">
@@ -462,6 +453,17 @@
                 <ScalarProperty Name="Sifre" ColumnName="Sifre" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Abouts">
+            <EntityTypeMapping TypeName="MyPortefolioDbModel.About">
+              <MappingFragment StoreEntitySet="Abouts">
+                <ScalarProperty Name="CvUrl" ColumnName="CvUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="AboutId" ColumnName="AboutId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

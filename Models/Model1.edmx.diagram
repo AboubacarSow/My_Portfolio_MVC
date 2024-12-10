@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ffe49c01f0104ee68b04fd41f8d943d6" Name="Diagram1">
-        <EntityTypeShape EntityType="MyPortefolioDbModel.About" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MyPortefolioDbModel.Banner" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MyPortefolioDbModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MyPortefolioDbModel.Contact" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
@@ -19,6 +18,7 @@
         <AssociationConnector Association="MyPortefolioDbModel.FK_Projects_Categories" ManuallyRouted="false" />
         <EntityTypeShape EntityType="MyPortefolioDbModel.Expertise" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="MyPortefolioDbModel.Admin" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="MyPortefolioDbModel.About" Width="1.5" PointX="9.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

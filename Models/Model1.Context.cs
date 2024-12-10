@@ -25,7 +25,6 @@ namespace My_Portfolio_MVC.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<About> Abouts { get; set; }
         public virtual DbSet<Banner> Banners { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
@@ -38,5 +37,6 @@ namespace My_Portfolio_MVC.Models
         public virtual DbSet<Testimonial> Testimonials { get; set; }
         public virtual DbSet<Expertise> Expertises { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<About> Abouts { get; set; }
     }
 }
