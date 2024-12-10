@@ -23,26 +23,24 @@ namespace My_Portfolio_MVC.Controllers
         public ActionResult AdminLayoutSideBar()
         {
             bool result = GetUser();
-            if (result)
+            if (!result)
             {
-                return PartialView();
+                return RedirectToAction("Redirect");
             }
-            else
-            {
-                return RedirectToAction("Index", "Login");
-            }
+
+            return PartialView();
         } 
         public ActionResult AdminLayoutNavBar()
         {
             bool result= GetUser();
-            if (result)
+            if (!result)
             {
-                return PartialView();
+                return RedirectToAction("Redirect");
             }
-            else
-            {
-                return RedirectToAction("Index","Login");
-            }
+            
+            return PartialView();
+           
+           
             
         }
 
@@ -62,7 +60,10 @@ namespace My_Portfolio_MVC.Controllers
 
             }
         }
-
+        public ActionResult Redirect()
+        {
+            return RedirectToAction("Index", "Login");
+        }
         public PartialViewResult AdminLayoutFooter()
         {
             return PartialView();

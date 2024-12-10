@@ -1,0 +1,39 @@
+﻿@model List<My_Portfolio_MVC.Models.Message>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<h2 class="text-light text-center mt-3"><i class="fa fa-envelope me-lg-2"></i>Mesajlar</h2>
+
+<table class="table table-striped rounded-1">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Gönderen Tam Adı</th>
+            <th>Mail Adresi</th>
+            <th>Konu</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var message in Model)
+            {
+            count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@message.Name</td>
+                    <td>@message.Email</td>
+                    <td>@message.Subject</td>
+                    <td>
+                        <button class="btn btn-primary" data-bs-toggle="toggle" data-bs-target="messageContent">Mesajı Oku</button>
+                        <a href="/Message/Delete/@message.MessageId" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table> 
+
+<!-- Modal to open and read the message-->
+
