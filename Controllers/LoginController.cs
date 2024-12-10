@@ -26,7 +26,7 @@ namespace My_Portfolio_MVC.Controllers
             }
             FormsAuthentication.SetAuthCookie(value.Email,false);
             Session["User name and surname"] = value.Name + " " + value.LastName;
-            Session["email"] = value.Email;
+            Session["imageUrl"]= value.ImageUrl;
             return RedirectToAction("Index","Category");
         }
     }

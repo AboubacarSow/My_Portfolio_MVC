@@ -467,6 +467,8 @@
     <Content Include="Views\Default\About.cshtml" />
     <Content Include="Views\Default\Education.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\IsRead.cshtml" />
+    <Content Include="Views\Message\IsNotRead.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
