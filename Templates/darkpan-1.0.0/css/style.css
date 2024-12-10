@@ -5,7 +5,7 @@
     --light: #6C7293;
     --dark: #000000;
 }
-
+/*  --dark: #000000;*/
 .back-to-top {
     position: fixed;
     display: none;

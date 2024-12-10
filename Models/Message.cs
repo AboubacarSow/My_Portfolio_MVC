@@ -19,6 +19,6 @@ namespace My_Portfolio_MVC.Models
         public string Email { get; set; }
         public string Subject { get; set; }
         public string MessageContent { get; set; }
-        public Nullable<bool> IsRead { get; set; }
+        public bool IsRead { get; set; }
     }
 }

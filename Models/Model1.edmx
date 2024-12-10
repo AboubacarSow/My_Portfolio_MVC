@@ -19,7 +19,7 @@
           <Key>
             <PropertyRef Name="AdminId" />
           </Key>
-          <Property Name="AdminId" Type="int" Nullable="false" />
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="Sifre" Type="nvarchar" MaxLength="8" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
@@ -89,7 +89,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="Subject" Type="nvarchar" MaxLength="50" />
           <Property Name="MessageContent" Type="nvarchar" MaxLength="500" />
-          <Property Name="IsRead" Type="bit" />
+          <Property Name="IsRead" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Projects">
           <Key>
@@ -100,7 +100,7 @@
           <Property Name="ImageUrl" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar" MaxLength="300" />
           <Property Name="CategoryId" Type="int" Nullable="false" />
-          <Property Name="GithubUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="GithubUrl" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="SocialMedias">
           <Key>
@@ -231,7 +231,7 @@
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MessageContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="IsRead" Type="Boolean" />
+          <Property Name="IsRead" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Project">
           <Key>
@@ -242,7 +242,7 @@
           <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
-          <Property Name="GithubUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GithubUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Projects_Categories" FromRole="Projects" ToRole="Categories" />
         </EntityType>
         <EntityType Name="SocialMedia">

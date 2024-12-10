@@ -15,8 +15,11 @@ namespace My_Portfolio_MVC.Controllers
         public ActionResult Index()
         {
             string _email = (string)Session["email"];
+            if (string.IsNullOrEmpty(_email))
+            {
+                return RedirectToAction("Index","Login");
+            }
             var admin = _dbContext.Admins.FirstOrDefault(p => p.Email == _email);
-
             return View(admin);
         }
         [HttpPost]  

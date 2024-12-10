@@ -20,23 +20,47 @@ namespace My_Portfolio_MVC.Controllers
         {
             return PartialView();
         }
-        public PartialViewResult AdminLayoutSideBar()
+        public ActionResult AdminLayoutSideBar()
         {
-            GetUser();
-            return PartialView();
+            bool result = GetUser();
+            if (result)
+            {
+                return PartialView();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
         } 
-        public PartialViewResult AdminLayoutNavBar()
+        public ActionResult AdminLayoutNavBar()
         {
-            GetUser();
-            return PartialView();
+            bool result= GetUser();
+            if (result)
+            {
+                return PartialView();
+            }
+            else
+            {
+                return RedirectToAction("Index","Login");
+            }
+            
         }
 
-        private void GetUser()
+        private bool GetUser()
         {
             var email = (string)Session["email"];
-            var user = _dbContext.Admins.FirstOrDefault(p => p.Email == email);
-            ViewBag.userName = user.Name + " " + user.LastName;
-            ViewBag.image = user.ImageUrl;
+            if(string.IsNullOrEmpty(email) )
+            {
+                return false;
+            }
+            else
+            {
+                var user = _dbContext.Admins.Where(p => p.Email == email).FirstOrDefault();
+                ViewBag.image = user.ImageUrl;
+                ViewBag.userName =  user.Name + " " + user.LastName;
+                return true;
+
+            }
         }
 
         public PartialViewResult AdminLayoutFooter()

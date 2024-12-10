@@ -9,6 +9,8 @@
 
 namespace My_Portfolio_MVC.Models
 {
+    using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
 
@@ -20,8 +22,9 @@ namespace My_Portfolio_MVC.Models
         public string Name { get; set; }
         public string LastName { get; set; }
         public string ImageUrl { get; set; }
+
+
         [NotMapped]
-        public HttpPostedFileBase ImageFile { get; set; }  
-        
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

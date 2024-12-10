@@ -27,9 +27,9 @@
                     <td><img src="@item.ImageUrl" width="80" />@item.Name</td>
                     <td>@item.Description</td>
                     <td>@item.Category.Name</td>
-                    <td> <a class="btn btn-outline-warning" href="@item.GithubUrl" target="_blank">Github Link</a></td>
-                    <td>@Html.ActionLink("Sil", "Delete", new { id = @item.ProjectId }, new { @class = "btn btn-outline-danger" })</td>
-                    <td>@Html.ActionLink("Güncelle", "Update", new { id = @item.ProjectId }, new { @class = "btn btn-outline-success" })</td>
+                    <td> <a class="btn btn-warning" href="@item.GithubUrl" style="white-space:nowrap" target="_blank">Github Link</a></td>
+                    <td>@Html.ActionLink("Sil", "Delete", new { id = @item.ProjectId }, new { @class = "btn btn-danger" })</td>
+                    <td>@Html.ActionLink("Güncelle", "Update", new { id = @item.ProjectId }, new { @class = "btn btn-success" })</td>
                 </tr>
             }
         </tbody>
