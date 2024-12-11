@@ -5,7 +5,7 @@
     <div class="row intro-content wide">
     @foreach(var item in Model)
      {
-        <div class="column">
+        <div class="column lg-11">
             <div class="text-pretitle with-line">
                @item.Title
             </div>
@@ -16,13 +16,12 @@
        </div>
 
      }
+        <div class="column lg-1">
+            <ul class="intro-social">
+               @Html.Action("SocialMedia")
+            </ul>
 
-        <ul class="intro-social">
-            <li><a href="#0">Behance</a></li>
-            <li><a href="#0">Twitter</a></li>
-            <li><a href="#0">Dribbble</a></li>
-            <li><a href="#0">Instagram</a></li>
-        </ul>
+        </div>
 
     </div> <!-- end intro content -->
 

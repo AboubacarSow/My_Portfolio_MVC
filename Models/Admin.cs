@@ -24,6 +24,6 @@ namespace My_Portfolio_MVC.Models
         public string ImageUrl { get; set; }
 
         [NotMapped]
-        public HttpPostedFileBase ImageFile { get; set; }
+        public HttpPostedFileBase  ImageFile { get; set; }
     }
 }

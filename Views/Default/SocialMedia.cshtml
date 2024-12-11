@@ -1,0 +1,8 @@
+﻿@model List<My_Portfolio_MVC.Models.SocialMedia>
+
+
+        @foreach(var social in Model)
+            {
+                 <li><a href="@social.Url" target="_blank">@social.Name</a></li>  
+
+            }

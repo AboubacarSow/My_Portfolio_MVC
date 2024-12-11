@@ -1,0 +1,38 @@
+﻿@using My_Portfolio_MVC.Models
+@model List<SocialMedia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="py-1">
+    <h4 class="text-center my-2">Sosyal Medya</h4>
+
+    <div class="container-fluid">
+
+        <table class="table table-hover table-striped" style="width:100%">
+            <thead class="bg-light">
+                <tr class="text-dark">
+                    <th class="text-center">Sosyal Media Adı</th>
+                    <th class="text-center">Sosyal Media Linki </th>
+                    <th class="text-center">Sil</th>
+                    <th class="text-center">Güncelle</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td class="text-center text-nowrap">@item.Name</td>
+                        <td class="text-center">@item.Url</td>
+                        <td class="text-center"><a href="/SocialMedia/Delete/@item.SocialMediaId" class="btn btn-danger">Sil</a></td>
+                        <td class="text-center"><a href="/SocialMedia/Update/@item.SocialMediaId" class="btn btn-success">Güncelle</a> </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <a href="/SocialMedia/Create" class="btn btn-success my-4 text-center"> Yeni Social Media Ekle </a>
+</div>

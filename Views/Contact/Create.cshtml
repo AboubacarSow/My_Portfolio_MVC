@@ -1,0 +1,17 @@
+﻿@model My_Portfolio_MVC.Models.Contact
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="py-5">
+    <h2 class="text-center">Oluşturma</h2>
+    <form method="post">
+        <label class="form-label">Telefon Numarası</label>
+         @Html.TextBoxFor(c=>c.Phone, new { @class= "form-control my-2"})
+        <label class="form-label">Mail Adresi</label>
+        @Html.TextBoxFor(c=>c.Email, new { @class= "form-control my-2"})
+        <br/>
+        <button class="btn btn-success" type="submit">Ekle</button>
+    </form>
+</div>
+

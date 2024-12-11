@@ -21,11 +21,12 @@ namespace My_Portfolio_MVC.Controllers
         }
         public PartialViewResult Expertise()
         {
-            return PartialView(_dbContext.Expertises.ToList());
+            
+            return PartialView();
         }
         public PartialViewResult Experience()
         {
-            return PartialView(_dbContext.Experiences.ToList());
+            return PartialView();
         }
         public PartialViewResult Project()
         {
@@ -46,12 +47,20 @@ namespace My_Portfolio_MVC.Controllers
         }
         public PartialViewResult About()
         {
-            var values = _dbContext.Abouts.ToList();
-            return PartialView(values);
+            var value = _dbContext.Abouts.Where(a => a.AboutId == 1).FirstOrDefault();
+            return PartialView(value);
         }
         public PartialViewResult Education()
         {
             return PartialView(_dbContext.Educations.ToList());
+        }
+        public PartialViewResult Contact()
+        {
+            return PartialView(_dbContext.Contacts.SingleOrDefault());
+        }
+        public PartialViewResult SocialMedia()
+        {
+            return PartialView(_dbContext.SocialMedias.ToList());
         }
     }
 }

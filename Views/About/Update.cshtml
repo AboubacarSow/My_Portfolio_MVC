@@ -1,0 +1,29 @@
+﻿@model My_Portfolio_MVC.Models.About
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h3 class="text-center">Güncelleme</h3>
+<form method="post" enctype="multipart/form-data">
+    <div class="text-danger">@Html.ValidationSummary()</div>
+    <input type="hidden" name="AboutId" value="@Model.AboutId" />
+    <div class="my-2">
+        <label class="my-1">Başlık</label>
+        @Html.TextBoxFor(a => a.Title, new { @class = "form-control" })
+    </div>
+    <div class="my-2">
+        <label class="my-1">Açıklama</label>
+        @Html.TextAreaFor(a => a.Description, new { @class = "form-control" })
+    </div>
+    <div class="my-2">
+        <label class="my-1">Resmi Yükleyin</label> <br />
+        <input type="file" name="ImageFile" value="@Model.ImageUrl"/>
+    </div>
+    <div class="my-2">
+        <label class="my-1">CV Yükleyin</label><br />
+        <input type="file" name="CvFile" value="@Model.CvUrl" />
+    </div>
+    <button class="btn btn-outline-success my-3"> Güncelle</button>
+</form>
+

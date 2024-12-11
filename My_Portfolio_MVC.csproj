@@ -128,15 +128,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\BannerController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\ExperienceController.cs" />
+    <Compile Include="Controllers\ExpertiseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -469,10 +475,25 @@
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\IsRead.cshtml" />
     <Content Include="Views\Message\IsNotRead.cshtml" />
+    <Content Include="Views\Banner\Index.cshtml" />
+    <Content Include="Views\Banner\Create.cshtml" />
+    <Content Include="Views\Banner\Update.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\Create.cshtml" />
+    <Content Include="Views\About\Update.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Default\Contact.cshtml" />
+    <Content Include="Views\SocialMedia\Index.cshtml" />
+    <Content Include="Views\SocialMedia\Create.cshtml" />
+    <Content Include="Views\SocialMedia\Update.cshtml" />
+    <Content Include="Views\Default\SocialMedia.cshtml" />
+    <Content Include="Views\Experience\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\" />
+    <Folder Include="Views\Expertise\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

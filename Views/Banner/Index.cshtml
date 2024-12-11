@@ -1,0 +1,41 @@
+﻿@using My_Portfolio_MVC.Models
+@model List<Banner>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="py-1">
+    <h4 class="text-center my-2">Banners</h4>
+
+    <div class="container-fluid">
+
+        <table class="table table-hover table-striped" style="width:100%">
+            <thead class="bg-light">
+                <tr class="text-dark">
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Banner Başlığı</th>
+                    <th class="text-center">Banner Açıklama</th>
+                    <th class="text-center">Durum</th>
+                    <th class="text-center">Sil</th>
+                    <th class="text-center">Güncelle</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">@item.BannerId</td>
+                        <td class="text-center">@item.Title</td>
+                        <td class="text-center">@item.Description</td>
+                        <td class="text-center">@(item.IsShown==true ? "Görünüyor" : "Görünmiyor")</td>
+                        <td class="text-center"><a href="/Banner/Delete/@item.BannerId" class="btn btn-outline-danger">Sil</a></td>
+                        <td class="text-center"><a href="/Banner/Update/@item.BannerId" class="btn btn-outline-success">Güncelle</a> </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <a href="/Banner/Create" class="btn btn-success my-4 text-center"> Yeni Banner Ekle </a>
+</div>

@@ -20,5 +20,6 @@ namespace My_Portfolio_MVC.Models
         public string Subject { get; set; }
         public string MessageContent { get; set; }
         public bool IsRead { get; set; }
+        public Nullable<System.DateTime> DateTimeMessage { get; set; }
     }
 }

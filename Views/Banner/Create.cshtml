@@ -1,0 +1,30 @@
+﻿@model My_Portfolio_MVC.Models.Banner
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2 class="text-center">Oluşturma</h2>
+<hr />
+<div class="container">
+    <form method="post" >
+
+        @Html.LabelFor(banner => banner.Title, "Banner Başlık", new { @class = "form-label my-1" })
+
+        @Html.TextBoxFor(banner => banner.Title, new { @class = "form-control" })
+
+        @Html.LabelFor(b=>b.Description,"Açıklama", new { @class= "form-label my-1"})
+
+        @Html.TextAreaFor(b=>b.Description, new { @class = "form-control"})
+
+        @Html.LabelFor(b=>b.IsShown, "Default'ta Gösterin", new { @class = "form-label my-1"} )
+        @Html.CheckBoxFor(b=>b.IsShown, new { @class = " my-3 mx-6"} )
+        
+
+        
+        <br />
+        <button type="submit" class="btn btn-outline-info my-3">Ekle</button>
+    </form>
+</div>
+
+
