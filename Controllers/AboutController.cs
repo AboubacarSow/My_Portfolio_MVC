@@ -44,6 +44,7 @@ namespace My_Portfolio_MVC.Controllers
                     about.ImageFile.SaveAs(fileName);
                     about.ImageUrl = "/assets/" + about.ImageFile.FileName;
                 }
+                
                 if (about.CvFile != null)
                 {
                     var currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -78,6 +79,7 @@ namespace My_Portfolio_MVC.Controllers
                     var fileName = Path.Combine(saveLocation, about.ImageFile.FileName);
                     about.ImageFile.SaveAs(fileName);
                     about.ImageUrl = "/assets/" + about.ImageFile.FileName;
+                    value.ImageUrl = about.ImageUrl;
                 }
                 if (about.CvFile != null)
                 {
@@ -86,9 +88,8 @@ namespace My_Portfolio_MVC.Controllers
                     var fileName = Path.Combine(saveDirectory, about.CvFile.FileName);
                     about.CvFile.SaveAs(fileName);
                     about.CvUrl = "/assets/" + about.CvFile.FileName;
+                    value.CvUrl = about.CvUrl;
                 }
-                value.ImageUrl = about.ImageUrl;
-                value.CvUrl = about.CvUrl;
                 value.Title =about.Title;
                 value.Description =about.Description;
                 _dbContext.SaveChanges();

@@ -21,11 +21,11 @@
     </div>
     <div class="my-2">
         <label class="my-4">Başlama Tarihi </label>
-        <input type="datetime" name="StartDate" value="@Model.StartDate.Value.ToShortDateString()"  class="form-control" />
+        <input type="datetime" name="StartDate" value="@Model.StartDate.ToString("d")"  class="form-control" />
     </div>
     <div class="my-2">
         <label class="my-4">Bitiş Tarihi <span><strong>(Eğer Devam Ediyorsa Boş Bırakın)</strong></span></label>
-        <input type="datetime" name="EndDate" value="@Model.EndDate.ToShortDateString()" class="form-control" />
+        <input type="datetime" name="EndDate" value="@Model.EndDate.Value.ToString("d")" class="form-control" />
     </div>
     <div class="my-2">
         <label class="my-4">Derece <span><strong>(Lisans , Önlisans , YüksekLisans vs.)</strong></span></label>

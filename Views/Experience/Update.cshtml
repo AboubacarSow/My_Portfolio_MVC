@@ -1,0 +1,33 @@
+﻿@model My_Portfolio_MVC.Models.Experience
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h4 class="text-center">Oluşturma</h4>
+
+<form method="post">
+    <div class="my-2">
+        <label class="my-4">Firma Adı</label>
+       <input type="text" value="@Model.CompanyName" name="CompanyName" class="form-control"/>
+    </div>
+    <div class="my-2">
+        <label class="my-4">Rolu</label>
+       <input type="text" value="@Model.Title" name="Title"  class="form-control"/>
+    </div>
+    <div class="my-2">
+        <label class="my-4">Açıklama</label>
+        <textarea type="text" value="@Model.Description" name="Description" class="form-control"></textarea>
+    </div>
+    <div class="my-2">
+        <label class="my-4">Başlama Tarihi </label>
+        <input type="date" name="StartDate" class="form-control" value="@Model.StartDate.Value.ToString("d")" />
+    </div>
+    <div class="my-2">
+        <label class="my-4">Bitiş Tarihi <span><strong>(Eğer Devam Ediyorsa Boş Bırakın)</strong></span></label>
+        <input type="date" name="EndDate" class="form-control" value="@Model.EndDate.Value.ToString("d")" />
+    </div>
+
+    <button class="btn btn-outline-primary my-4">Kaydet</button>
+</form>
+

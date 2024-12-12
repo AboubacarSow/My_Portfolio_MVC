@@ -1,1 +1,42 @@
-﻿
+﻿@using My_Portfolio_MVC.Models
+@model List<Experience>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="py-1">
+    <h4 class="text-center my-2">Deneyimlerim</h4>
+
+    <div class="container-fluid">
+
+        <table class="table table-hover table-striped" style="width:100%">
+            <thead class="bg-light">
+                <tr class="text-dark">
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Firma Adı</th>
+                    <th class="text-center">Açıklam</th>
+                    <th class="text-center">Başlangıç - Bitiş</th>
+                    <th class="text-center">Sil</th>
+                    <th class="text-center">Güncelle</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">@item.ExperienceId</td>
+                        <td class="text-center">@item.CompanyName</td>
+                        <td class="text-center">@item.Description</td>
+                        <td class="text-center">@item.StartDate.Value.ToString("d") - @(String.IsNullOrEmpty(item.EndDate.ToString())? "Devam Ediyor":item.EndDate.Value.ToString())</td>
+                        <td class="text-center"><a href="/Experience/Delete/@item.ExperienceId" class="btn btn-outline-danger">Sil</a></td>
+
+                        <td class="text-center"><a href="/Experience/Update/@item.ExperienceId" class="btn btn-outline-success">Güncelle</a> </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <a href="/Experience/Create" class="btn btn-success my-4 text-center"> Yeni Deneyim Ekle </a>
+</div>

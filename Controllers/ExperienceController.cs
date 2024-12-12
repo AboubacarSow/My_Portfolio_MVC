@@ -35,7 +35,8 @@ namespace My_Portfolio_MVC.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
-            return View(_dbContext.Experiences.Find(id));
+            var value = _dbContext.Experiences.Find(id);
+            return View(value);
         }
         [HttpPost]
         public ActionResult Update(Experience experience)

@@ -22,11 +22,11 @@ namespace My_Portfolio_MVC.Controllers
         public PartialViewResult Expertise()
         {
             
-            return PartialView();
+            return PartialView(_dbContext.Expertises.ToList());
         }
         public PartialViewResult Experience()
         {
-            return PartialView();
+            return PartialView(_dbContext.Experiences.ToList());
         }
         public PartialViewResult Project()
         {
