@@ -4,11 +4,11 @@
     @foreach (var item in Model)
     {
 
-        <button data-bs-toggle="modal" data-bs-target="#content-@item.MessageId" class="dropdown-item">
+        <button data-bs-toggle="modal" data-bs-target="#contenu-@item.MessageId" class="dropdown-item">
             <div class="d-flex align-items-center">
                 <div class="ms-2">
                     <h6 class="fw-normal mb-0">@item.Name</h6>
-                    <small>@item.DateTimeMessage</small>
+                    <small class="text-light">@item.DateTimeMessage</small>
                 </div>
             </div>
         </button>
@@ -20,7 +20,7 @@
 
 @foreach (var mesaj in Model)
 {
-    <div class="modal " id="content-@mesaj.MessageId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal " id="contenu-@mesaj.MessageId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -36,7 +36,7 @@
                     <p class="lead">@mesaj.MessageContent</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="/Message/SetAsRead/@mesaj.MessageId" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Okundu</a>
+                    <a href="/Message/SetAsRead/@mesaj.MessageId" class="btn btn-secondary">Okundu</a>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kapat</button>
                 </div>
             </div>
