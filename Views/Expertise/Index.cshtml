@@ -1,0 +1,37 @@
+﻿@model List<My_Portfolio_MVC.Models.Expertise>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="py-1">
+
+    <h4 class="text-center my-2">Uzman Alanlarım </h4>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Başlık</th>
+            <th>Silme</th>
+            <th>Güncelleme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.ExpertiseId</td>
+                <td>
+                    @item.Title
+                </td>
+                <td><a href="/Expertise/Delete/@item.ExpertiseId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Expertise/Update/@item.ExpertiseId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Expertise/Create/" class="btn btn-outline-info" >Yeni Uzman Alanı Ekle</a>
+

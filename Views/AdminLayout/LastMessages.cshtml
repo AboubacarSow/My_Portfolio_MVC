@@ -1,0 +1,45 @@
+﻿@model IEnumerable<My_Portfolio_MVC.Models.Message>
+
+<div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+    @foreach (var item in Model)
+    {
+
+        <button data-bs-toggle="modal" data-bs-target="#content-@item.MessageId" class="dropdown-item">
+            <div class="d-flex align-items-center">
+                <div class="ms-2">
+                    <h6 class="fw-normal mb-0">@item.Name</h6>
+                    <small>@item.DateTimeMessage</small>
+                </div>
+            </div>
+        </button>
+        <hr class="dropdown-divider">
+    }
+
+    <a href="/Message/IsNotRead" class="dropdown-item text-center">Bütünü Gör</a>
+</div>
+
+@foreach (var mesaj in Model)
+{
+    <div class="modal " id="content-@mesaj.MessageId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">
+                        @mesaj.Subject
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column gap-2">
+                    <p class="row-nowrap fw-bold"><span class="text-dark">Gönderen Tam Adi : </span> <span class="lead">@mesaj.Name</span></p>
+                    <p class="row-nowrap fw-bold"><span class="text-dark">Gönderen Emaili : </span><span class="lead">@mesaj.Email</span></p>
+                    <p class="row-nowrap fw-bold text-dark">Mesaj içeriği : </p>
+                    <p class="lead">@mesaj.MessageContent</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/Message/SetAsRead/@mesaj.MessageId" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Okundu</a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

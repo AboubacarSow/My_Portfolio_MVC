@@ -34,13 +34,13 @@ namespace My_Portfolio_MVC.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
-        [HttpPost]
+      
         public ActionResult SetAsRead(int id)
         {
             var message = _dbContext.Messages.Find(id);
             message.IsRead = true;
             _dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IsNotRead");
         }
     }
 }

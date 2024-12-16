@@ -1,0 +1,21 @@
+﻿@model My_Portfolio_MVC.Models.Expertise
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+
+<div class="py-1">
+
+    <h4 class="text-center my-2"> Güncelleme </h4>
+</div>
+
+<form method="post">
+    <input type="hidden" value="@Model.ExpertiseId" name="ExpertiseId" />
+    @Html.LabelFor(e => e.Title, new { @class = "form-label" })
+    @Html.TextBoxFor(e => e.Title, new { @class = "form-control" })
+    <button class="btn btn-info my-2" type="submit">Güncelle </button>
+</form>
+
+

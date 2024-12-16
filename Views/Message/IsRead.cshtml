@@ -11,9 +11,10 @@
     <thead class="bg-light text-dark">
         <tr>
             <th>No</th>
-            <th>Gönderen Tam Adı</th>
+            <th class="text-nowrap">Gönderen Tam Adı</th>
             <th>Mail Adresi</th>
             <th>Konu</th>
+            <th>Ne Zaman</th>
             <th>İşlemler</th>
         </tr>
     </thead>
@@ -26,12 +27,13 @@
                 <td>@message.Name</td>
                 <td>@message.Email</td>
                 <td>@message.Subject</td>
-                <td>
+                <td>@message.DateTimeMessage</td>
+                <td class="text-nowrap">
                     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#content-@message.MessageId">
-                        <i class="fa-sharp fa-light fa-envelope-open"></i>
+                        
                         Mesajı Oku
                     </button>
-                    <a href="/Message/Delete/@message.MessageId" class="btn btn-danger"><i class="fa-thin fa-trash me-2"></i>Sil</a>
+                    <a href="/Message/Delete/@message.MessageId" class="btn btn-danger">Sil</a>
                 </td>
             </tr>
         }

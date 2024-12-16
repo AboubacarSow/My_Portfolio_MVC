@@ -143,6 +143,7 @@
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
+    <Compile Include="Controllers\TestimonialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -491,11 +492,18 @@
     <Content Include="Views\Experience\Index.cshtml" />
     <Content Include="Views\Experience\Create.cshtml" />
     <Content Include="Views\Experience\Update.cshtml" />
+    <Content Include="Views\Contact\Update.cshtml" />
+    <Content Include="Views\Expertise\Index.cshtml" />
+    <Content Include="Views\Expertise\Create.cshtml" />
+    <Content Include="Views\Expertise\Update.cshtml" />
+    <Content Include="Views\Testimonial\Index.cshtml" />
+    <Content Include="Views\Default\Testimonial.cshtml" />
+    <Content Include="Views\Testimonial\Create.cshtml" />
+    <Content Include="Views\AdminLayout\LastMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\" />
-    <Folder Include="Views\Expertise\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

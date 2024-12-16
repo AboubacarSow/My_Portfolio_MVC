@@ -1,12 +1,13 @@
 ﻿@model My_Portfolio_MVC.Models.Experience
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Update";
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
-<h4 class="text-center">Oluşturma</h4>
+<h4 class="text-center">Güncelleme</h4>
 
-<form method="post">
+<form method="post" action="Update">
+    <input type="hidden" name="ExperienceId" value="@Model.ExperienceId" />
     <div class="my-2">
         <label class="my-4">Firma Adı</label>
        <input type="text" value="@Model.CompanyName" name="CompanyName" class="form-control"/>
@@ -16,18 +17,19 @@
        <input type="text" value="@Model.Title" name="Title"  class="form-control"/>
     </div>
     <div class="my-2">
-        <label class="my-4">Açıklama</label>
-        <textarea type="text" value="@Model.Description" name="Description" class="form-control"></textarea>
+        <label class="my-4 form-label">Açıklama</label>
+        <input type="text" value="@Model.Description" name="Description" class="form-control" />
     </div>
     <div class="my-2">
-        <label class="my-4">Başlama Tarihi </label>
+        <label class="my-2">Başlama Tarihi </label>
         <input type="date" name="StartDate" class="form-control" value="@Model.StartDate.Value.ToString("d")" />
     </div>
-    <div class="my-2">
-        <label class="my-4">Bitiş Tarihi <span><strong>(Eğer Devam Ediyorsa Boş Bırakın)</strong></span></label>
+    <div class="my-2" >
+        <label class="my-4 form-label">Bitiş Tarihi <span><strong>(Eğer Devam Ediyorsa Boş Bırakın)</strong></span></label>
+        
         <input type="date" name="EndDate" class="form-control" value="@Model.EndDate.Value.ToString("d")" />
     </div>
 
-    <button class="btn btn-outline-primary my-4">Kaydet</button>
+    <button class="btn btn-outline-primary my-4">Güncelle</button>
 </form>
 

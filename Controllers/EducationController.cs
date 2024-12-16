@@ -30,7 +30,9 @@ namespace My_Portfolio_MVC.Controllers
         [HttpGet]
         public ActionResult Update (int id)
         { 
-            return View(_dbContext.Educations.Find(id));
+            var value= _dbContext.Educations.Find(id);  
+
+            return View(value);
         }
         [HttpPost]
         public ActionResult Update(Education model)

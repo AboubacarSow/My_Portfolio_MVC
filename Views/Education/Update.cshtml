@@ -4,7 +4,7 @@
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
-<h4 class="text-center">Update</h4>
+<h4 class="text-center">Güncelleme</h4>
 
 <form method="post">
     <div class="my-2">
@@ -17,7 +17,7 @@
     </div>
     <div class="my-2">
         <label class="my-4">Açıklama</label>
-        @Html.TextBoxFor(e => e.Description, new { @class = "form-control" })
+       <input type="text" name="Description" value="@Model.Description" class="form-control" />
     </div>
     <div class="my-2">
         <label class="my-4">Başlama Tarihi </label>
@@ -25,7 +25,7 @@
     </div>
     <div class="my-2">
         <label class="my-4">Bitiş Tarihi <span><strong>(Eğer Devam Ediyorsa Boş Bırakın)</strong></span></label>
-        <input type="datetime" name="EndDate" value="@Model.EndDate.Value.ToString("d")" class="form-control" />
+        <input type="datetime" name="EndDate" class="form-control" value="@(Model.EndDate.Value.ToString("d") ?? "Devam Ediyor" )" />
     </div>
     <div class="my-2">
         <label class="my-4">Derece <span><strong>(Lisans , Önlisans , YüksekLisans vs.)</strong></span></label>

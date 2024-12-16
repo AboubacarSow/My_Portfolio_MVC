@@ -1,4 +1,5 @@
 ﻿using My_Portfolio_MVC.Models;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -41,6 +42,8 @@ namespace My_Portfolio_MVC.Controllers
         [HttpPost]
         public PartialViewResult SendMessage(Message message)
         {
+            DateTime date = DateTime.Now;
+            message.DateTimeMessage = date;
             _dbContext.Messages.Add(message);
             _dbContext.SaveChanges();
             return PartialView();
@@ -62,5 +65,10 @@ namespace My_Portfolio_MVC.Controllers
         {
             return PartialView(_dbContext.SocialMedias.ToList());
         }
+        public PartialViewResult Testimonial()
+        {
+            return PartialView(_dbContext.Testimonials.ToList());
+        }
+       
     }
 }

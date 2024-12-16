@@ -14,6 +14,7 @@
             <th>Gönderen Tam Adı</th>
             <th>Mail Adresi</th>
             <th>Konu</th>
+            <th>Ne zaman</th>
             <th>İşlemler</th>
         </tr>
     </thead>
@@ -26,7 +27,8 @@
                 <td>@message.Name</td>
                 <td>@message.Email</td>
                 <td>@message.Subject</td>
-                <td>
+                <td class="text-nowrap">@message.DateTimeMessage</td>
+                <td class="text-nowrap">
                     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#content-@message.MessageId">
                         Mesajı Oku
                     </button>
@@ -58,7 +60,7 @@
                     <p class="lead">@mesaj.MessageContent</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="/Message/SetAsRead/@mesaj.MessageId" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Okundu</a>
+                    <a href="/Message/SetAsRead/@mesaj.MessageId" class="btn btn-secondary">Okundu</a>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kapat</button>
                 </div>
             </div>

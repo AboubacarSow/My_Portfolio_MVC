@@ -40,9 +40,8 @@ namespace My_Portfolio_MVC.Controllers
         [HttpPost]
         public ActionResult Update( Expertise expertise)
         {
-            var value = _dbContext.Expertises
-                                   .Where(s => s.ExpertiseId == expertise.ExpertiseId)
-                                   .FirstOrDefault();
+            var value = _dbContext.Expertises.Find(expertise.ExpertiseId);
+                                   
             value.Title = expertise.Title;
             _dbContext.SaveChanges();
             return RedirectToAction("Index");

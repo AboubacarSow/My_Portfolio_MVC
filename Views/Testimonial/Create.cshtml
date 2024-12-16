@@ -1,0 +1,24 @@
+﻿@model My_Portfolio_MVC.Models.Testimonial
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="py-4">
+    <h4 class="text-center">Oluşturma</h4>
+</div>
+
+
+<form method="post">
+    <label class="form-label"> Tam Adı</label>
+    @Html.TextBoxFor(t => t.FullName, new { @class = "form-control my-1" })
+    <label class="form-label"> Başlık</label>
+    @Html.TextBoxFor(t => t.Title, new { @class = "form-control my-1" }) 
+    <label class="form-label"> Resim Yolu</label>
+    @Html.TextAreaFor(t => t.Comment, new { @class = "form-control my-1" })
+    <div class="py-4">
+   
+         <button class="btn btn-outline-info" >Ekle</button>
+    </div>
+    
+</form>
+

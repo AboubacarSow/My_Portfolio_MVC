@@ -1,0 +1,16 @@
+﻿@model My_Portfolio_MVC.Models.Expertise
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<div class="py-1">
+
+    <h4 class="text-center my-2"> Oluşturma </h4>
+</div>
+
+<form method="post" >
+    @Html.LabelFor(e=>e.Title,new { @class="form-label"})
+    @Html.TextBoxFor(e=>e.Title,new { @class="form-control"})
+    <button class="btn btn-info my-2" type="submit" >Ekle </button>
+</form>
+
