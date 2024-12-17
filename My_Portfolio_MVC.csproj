@@ -234,6 +234,22 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="ScreenShoots\categories.PNG" />
+    <Content Include="ScreenShoots\diagram.PNG" />
+    <Content Include="ScreenShoots\etude.PNG" />
+    <Content Include="ScreenShoots\expertiseEdu.PNG" />
+    <Content Include="ScreenShoots\hakkimda.PNG" />
+    <Content Include="ScreenShoots\hakkimmda.PNG" />
+    <Content Include="ScreenShoots\loginPage.PNG" />
+    <Content Include="ScreenShoots\message.PNG" />
+    <Content Include="ScreenShoots\messageDetails.PNG" />
+    <Content Include="ScreenShoots\messagePage.PNG" />
+    <Content Include="ScreenShoots\project.PNG" />
+    <Content Include="ScreenShoots\projects.PNG" />
+    <Content Include="ScreenShoots\referance.PNG" />
+    <Content Include="ScreenShoots\siteIntro.PNG" />
+    <Content Include="ScreenShoots\siteuzman.PNG" />
+    <Content Include="ScreenShoots\uzman.PNG" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
