@@ -9,7 +9,7 @@
 ### This project is based on designing my portfolio dynamically, so we have inside the project's architecture, two (2) areas:
 	 <ul style="list-style:circle; margin-left:30px"> 
 		<li> The web(portfolio itself,side that is visible for everyone</li>
-		<li> The Admin side, where i have the ability to manage the web side  </li>
+		<li> The Admin side, where i have the ability to manage the web side</li>
    </ul>
 <hr />
 
@@ -39,37 +39,38 @@
 </ul>
 
 
-### Portolio Itself
+## Portolio Itself
 
-#### Introduction 
+### Introduction 
 
 <img src="ScreenShoots/siteIntro.PNG" alt="who am i"/>
 
-#### About Me 
+### About Me 
 
 <img src="ScreenShoots/hakkimda.PNG" alt="about me side"/>
 
-#### Qualifications
+### Qualifications
 
 <img src="ScreenShoots/siteuzman.PNG" alt="knowledge and interest"/>
 
-#### My Background
+### My Background
 
 <img src="ScreenShoots/expertiseEdu.PNG" alt="knowledge and interest"/>
 
-#### Last Projects
+### Last Projects
 
 <img src="ScreenShoots/projects.PNG" alt="Last Projects"/>
 
-##### Admin Side
+## Admin Side
+<hr />
 
 ### Category of Projects
 
-<img src="Assets/screenShoots/categories.PNG" alt="Categories" />
+<img src="ScreenShoots/categories.PNG" alt="Categories" />
 
 ###  Projects
 
-<img src="Assets/screenShoots/project.PNG" alt="Projects" />
+<img src="ScreenShoots/project.PNG" alt="Projects" />
 
 ### About Me
 
@@ -99,7 +100,7 @@
 
 ## References
 
-<img src="ScreenShoots/reference.PNG" alt="Reference"/>
+<img src="ScreenShoots/referance.PNG" alt="Reference"/>
 
 
  #### Diagram From MSSMS 
