@@ -8,11 +8,13 @@
 
 #### This project is based on designing my portfolio dynamically, so we have inside the project's architecture, two (2) areas:
 	 
-	 <ul style="list-style:circle; margin-left:30px"> 
-		<li> The web (portfolio itself,side that is visible for everyone) </li>
+	  <ul style="list-style:circle;margin-left:30px">
+		<li>The web (portfolio itself,side that is visible for everyone) </li>
 		<li> The Admin side, where i have the ability to manage the web side </li>
+	  </ul>
 
-     </ul>
+
+ 
 
 <hr />
 
