@@ -4,20 +4,21 @@
 </head>
 <body>
 
-# My_Portfolio_ [🚀](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
+# My New Release Portfolio [🚀](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 
 #### This project is based on designing my portfolio dynamically, so we have inside the project's architecture, two (2) areas:
 	 
 	 <ul style="list-style:circle; margin-left:30px"> 
 		<li> The web (portfolio itself,side that is visible for everyone) </li>
 		<li> The Admin side, where i have the ability to manage the web side </li>
+
      </ul>
 
 <hr />
 
 ## Project's Details :
 
-#### Technologies that have been used(under the capo) 🛠 :
+#### Technologies that have been used(under  capo) 🛠 :
 
    <ul style="list-style:circle; margin-left:30px"> 
 		<li> HTML, CSS, BOOTSTRAP, FONT AWESOME </li>
